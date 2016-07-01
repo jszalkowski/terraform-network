@@ -89,7 +89,7 @@ variable "az_list" {
 
 variable "cisco_cidr" {
   description = "IP block from Cisco"
-  default = "128.107.0.0/16,173.36.0.0/16"
+  default = "128.107.0.0/16,173.36.0.0/16,72.163.0.0/16"
 }
 
 variable "bastion_image" {
