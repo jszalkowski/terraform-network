@@ -8,10 +8,10 @@ This module creates the following:
 3. subnets (public and private);
 4. NAT gateway (for each private subnet);
 5. security groups;
-6. bastion hosts (one for each public subnet); and
-7. jump hosts (one for each private subnet).
+6. bastion host; and
+7. jump hosts.
 
-This module creates 2 subnets for HA.
+This module creates 2 public/private subnets for HA.
 
 ## Variables
 
