@@ -21,9 +21,11 @@ Name | Description | Default
 `authorized_keys` | public keys for SSH access | |
 `bastion_image` | AMI for bastion instance | standard Amazon Linux image
 `bastion_instance_type` | instance type for bastion instance | t2.micro
+`bastion_subnet_index` | public subnet index (either 0 or 1) | 0
 `environment` | environment to configure | |
 `jump_image` | AMI for jump host | standard Amazon Linux image
 `jump_instance_type` | instance type for jump host | t2.micro
+`jump_subnet_index` | private subnet index (either 0 or 1) | 0
 `region` | region to configure | |
 
 ## Outputs
