@@ -105,6 +105,11 @@ variable "bastion_instance_type" {
   default = "t2.micro"
 }
 
+variable "bastion_subnet_index" {
+  description = "public subnet index (either 0 or 1)"
+  default = 0
+}
+
 variable "jump_image" {
   description = "AMI for jump host"
   default = {
@@ -116,6 +121,11 @@ variable "jump_image" {
 variable "jump_instance_type" {
   description = "instance type for jump host"
   default = "t2.micro"
+}
+
+variable "jump_subnet_index" {
+  description = "private subnet index (either 0 or 1)"
+  default = 0
 }
 
 variable "authorized_keys" {

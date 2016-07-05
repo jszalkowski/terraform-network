@@ -6,7 +6,7 @@ resource "aws_instance" "bastion" {
   ami = "${lookup(var.bastion_image, var.region)}"
   instance_type = "${var.bastion_instance_type}"
   vpc_security_group_ids = ["${aws_security_group.bastion-security-group.id}"]
-  subnet_id = "${element(aws_subnet.public-subnet.*.id, 0)}"
+  subnet_id = "${element(aws_subnet.public-subnet.*.id, var.bastion_subnet_index)}"
   user_data = "${template_file.instance-user-data.rendered}"
   associate_public_ip_address = true
   tags {
@@ -20,7 +20,7 @@ resource "aws_instance" "jump" {
   ami = "${lookup(var.jump_image, var.region)}"
   instance_type = "${var.jump_instance_type}"
   vpc_security_group_ids = ["${aws_security_group.internal-security-group.id}"]
-  subnet_id = "${element(aws_subnet.private-subnet.*.id, 0)}"
+  subnet_id = "${element(aws_subnet.private-subnet.*.id, var.jump_subnet_index)}"
   user_data = "${template_file.instance-user-data.rendered}"
   tags {
     Name = "${var.app_name}-${var.environment}-jump-${count.index}"
