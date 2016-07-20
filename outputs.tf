@@ -18,6 +18,10 @@ output "internal_security_group_id" {
   value = "${aws_security_group.internal-security-group.id}"
 }
 
+output "cisco_web_security_group_id" {
+  value = "${aws_security_group.cisco-web-security-group.id}"
+}
+
 output "nat_ips" {
   value = "${join(",", aws_nat_gateway.nat-gw.*.public_ip)}"
 }
